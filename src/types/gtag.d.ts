@@ -12,10 +12,10 @@ declare global {
         event_label?: string;
         value?: number;
         send_to?: string;
-        [key: string]: any;
+        [key: string]: string | number | boolean | undefined;
       }
     ) => void;
-    dataLayer: any[];
+    dataLayer: Record<string, unknown>[];
   }
 }
 
