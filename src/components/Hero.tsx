@@ -1,3 +1,5 @@
+import EmailCapture from './EmailCapture';
+
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
@@ -18,14 +20,8 @@ export default function Hero() {
           Your data stays yours. Your focus comes back.
         </p>
         
-        <div className="space-y-6">
-          <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105">
-            Request Early Access
-          </button>
-          
-          <p className="text-sm text-gray-400">
-            Join the waitlist • Get 50% off lifetime access • 100% Privacy Guaranteed
-          </p>
+        <div className="mb-12">
+          <EmailCapture />
         </div>
         
         <div className="mt-16 flex justify-center space-x-8 text-sm text-gray-400">
