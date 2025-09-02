@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
 
     // Send welcome email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'CtrlZ <hello@ctrlz.app>',
+      from: 'CtrlZ <onboarding@resend.dev>',
       to: [email],
       subject: '🎉 Welcome to CtrlZ Early Access!',
       html: `
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
 
             <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 20px; margin: 20px 0; border: 1px solid rgba(255,255,255,0.1);">
               <p style="margin: 0; font-size: 14px; line-height: 1.5;">
-                💡 <strong>Pro Tip:</strong> Add hello@ctrlz.app to your contacts so our updates don't go to spam! We'll only send you the most important updates.
+                💡 <strong>Pro Tip:</strong> Add this sender to your contacts so our updates don't go to spam! We'll only send you the most important updates.
               </p>
             </div>
 
