@@ -1,15 +1,14 @@
 'use client';
 
-import { useState } from 'react';
 import EmailCapture from './EmailCapture';
 
 export default function EarlyAccessOffer() {
-  const [timeLeft, setTimeLeft] = useState({
+  const timeLeft = {
     days: 7,
     hours: 23,
     minutes: 45,
     seconds: 30
-  });
+  };
 
   // Simulate countdown (in a real app, this would be calculated from a real end date)
   const benefits = [

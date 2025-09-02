@@ -36,15 +36,32 @@ export default function EmailCapture({ className = '' }: EmailCaptureProps) {
     setMessage('');
 
     try {
-      // TODO: This will connect to API route in T09/T10
-      // For now, simulate success after delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to subscribe');
+      }
+
       setMessage('🎉 You\'re on the list! Check your email for next steps.');
       setIsSuccess(true);
       setEmail('');
-    } catch {
-      setMessage('Something went wrong. Please try again.');
+
+      // Optional: Redirect to thanks page after 2 seconds
+      setTimeout(() => {
+        window.location.href = '/thanks';
+      }, 2000);
+
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : 'Something went wrong. Please try again.';
+      setMessage(errorMessage);
       setIsSuccess(false);
     } finally {
       setIsSubmitting(false);
