@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
 import PrivacyFirst from '@/components/PrivacyFirst';
+import EarlyAccessOffer from '@/components/EarlyAccessOffer';
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <HowItWorks />
       <PrivacyFirst />
+      <EarlyAccessOffer />
     </main>
   );
 }
