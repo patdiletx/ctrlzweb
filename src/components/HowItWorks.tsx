@@ -1,32 +1,30 @@
+import StepVisual from './StepVisual';
+
 export default function HowItWorks() {
   const steps = [
     {
       number: "01",
-      title: "Detect Interruptions",
-      description: "CtrlZ automatically detects when you're interrupted - whether it's a notification, meeting, or context switch.",
-      placeholder: "🎯 GIF: Screen showing notification detection",
-      icon: "🔍"
+      title: "Capture",
+      description: "CtrlZ automatically captures your work context - files, browser tabs, terminal sessions, and your current mental state. Everything is stored locally and securely.",
+      placeholder: "📸 Visual: Screenshots and data being captured in real-time",
+      icon: "📸",
+      visual: "capture"
     },
     {
       number: "02", 
-      title: "Capture Your Context",
-      description: "Before you switch tasks, CtrlZ captures your current work context - windows, documents, and mental state.",
-      placeholder: "📸 GIF: Context being captured and saved",
-      icon: "📋"
+      title: "Analyze",
+      description: "Our AI analyzes your captured context to understand what you were working on, creating intelligent summaries and identifying key patterns.",
+      placeholder: "🧠 Visual: Data flowing through analysis pipeline",
+      icon: "🧠",
+      visual: "analyze"
     },
     {
       number: "03",
-      title: "Handle the Interruption", 
-      description: "Deal with the interruption knowing your context is safely stored. No more losing track of where you were.",
-      placeholder: "⚡ GIF: User handling interruption confidently",
-      icon: "🚀"
-    },
-    {
-      number: "04",
-      title: "Instant Context Restore",
-      description: "When you're ready to resume, CtrlZ instantly restores your workspace and reminds you exactly where you left off.",
-      placeholder: "🔄 GIF: Workspace being restored perfectly",
-      icon: "⚡"
+      title: "Restore",
+      description: "When you're ready to resume, CtrlZ instantly suggests exactly where you left off with intelligent context restoration and smart recommendations.",
+      placeholder: "⚡ Visual: Terminal showing suggestions appearing",
+      icon: "⚡",
+      visual: "restore"
     }
   ];
 
@@ -53,7 +51,7 @@ export default function HowItWorks() {
                     {step.number}
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 flex items-center space-x-2">
+                    <h3 className="text-3xl font-bold text-gray-900 flex items-center space-x-3">
                       <span>{step.icon}</span>
                       <span>{step.title}</span>
                     </h3>
@@ -69,26 +67,23 @@ export default function HowItWorks() {
                   <div className="flex flex-wrap gap-2 mt-4">
                     {index === 0 && (
                       <>
-                        <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Smart Detection</span>
-                        <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">No Manual Setup</span>
+                        <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Automatic</span>
+                        <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">100% Local</span>
+                        <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Secure</span>
                       </>
                     )}
                     {index === 1 && (
                       <>
-                        <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">Complete Context</span>
-                        <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">100% Local</span>
+                        <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">AI-Powered</span>
+                        <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Smart Insights</span>
+                        <span className="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-sm font-medium">Pattern Recognition</span>
                       </>
                     )}
                     {index === 2 && (
                       <>
-                        <span className="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">Peace of Mind</span>
-                        <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">No Stress</span>
-                      </>
-                    )}
-                    {index === 3 && (
-                      <>
                         <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Instant Resume</span>
                         <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Zero Memory Load</span>
+                        <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Context-Aware</span>
                       </>
                     )}
                   </div>
@@ -97,28 +92,13 @@ export default function HowItWorks() {
             </div>
           ))}
 
-          {/* Placeholder areas for GIFs */}
+          {/* Enhanced Visual Areas */}
           {steps.map((step, index) => (
-            <div key={`gif-${step.number}`} className={`${index % 2 === 0 ? 'lg:order-1' : ''}`}>
-              <div className="relative group">
-                {/* GIF Placeholder */}
-                <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl shadow-lg overflow-hidden border-2 border-gray-200 group-hover:border-blue-300 transition-all duration-300">
-                  <div className="h-full flex flex-col items-center justify-center text-center p-8 space-y-4">
-                    <div className="text-6xl opacity-50">
-                      {step.icon}
-                    </div>
-                    <div className="text-gray-600 font-medium">
-                      {step.placeholder}
-                    </div>
-                    <div className="text-sm text-gray-500 bg-white/70 px-3 py-1 rounded-full">
-                      Coming Soon: Interactive Demo
-                    </div>
-                  </div>
-                </div>
-
-                {/* Overlay effect */}
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
+            <div key={`visual-${step.number}`} className={`${index % 2 === 0 ? 'lg:order-1' : ''}`}>
+              <StepVisual 
+                type={step.visual as 'capture' | 'analyze' | 'restore'}
+                placeholder={step.placeholder}
+              />
             </div>
           ))}
         </div>
