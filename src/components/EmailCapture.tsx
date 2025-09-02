@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackEmailSubscription } from './Analytics';
 
 interface EmailCaptureProps {
   className?: string;
@@ -52,6 +53,10 @@ export default function EmailCapture({ className = '' }: EmailCaptureProps) {
 
       setMessage('🎉 You\'re on the list! Check your email for next steps.');
       setIsSuccess(true);
+      
+      // Track successful subscription
+      trackEmailSubscription(email);
+      
       setEmail('');
 
       // Optional: Redirect to thanks page after 2 seconds
