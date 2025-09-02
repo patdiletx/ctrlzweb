@@ -1,4 +1,14 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Thank You - CtrlZ Early Access",
+  description: "Welcome to CtrlZ early access program! You've secured your 50% discount and will be among the first to experience our privacy-first productivity tool.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function ThanksPage() {
   return (
